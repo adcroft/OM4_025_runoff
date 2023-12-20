@@ -5,7 +5,7 @@ before_script:
   - git submodule init
   - git submodule update
   # Create python environment
-  - test -f Miniconda3-latest-Linux-x86_64.sh || wget -nv http://anaconda.rdhpcs.noaa.gov/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  - test -f Miniconda3-latest-Linux-x86_64.sh || wget -nv https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
   - bash Miniconda3-latest-Linux-x86_64.sh -b -p `pwd`/local_env
   - export PATH=`pwd`/local_env/bin:$PATH
 
@@ -15,7 +15,7 @@ build:
   tags:
     - pan
   script:
-    - conda create -q -y -n py3 python=3 numpy netcdf4 numba scipy
+    - conda create -q -y -n py3 python=3.11 numpy netcdf4 numba scipy
     - . activate py3
     - conda list -e
     - make
