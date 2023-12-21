@@ -19,3 +19,4 @@ build:
     - . activate py3
     - conda list -e
     - make core
+    - md5sum -c core.md5

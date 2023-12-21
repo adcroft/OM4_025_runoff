@@ -35,5 +35,8 @@ runoff.daitren.iaf.1440x1080.v20180328.nc: runoff.daitren.iaf.20120419.nc ocean_
 hash.md5: | $(TARGS)
 	md5sum $(TARGS) > $@
 
+core.md5: | runoff.daitren.clim.1440x1080.v20180328.nc runoff.daitren.iaf.1440x1080.v20180328.nc
+	md5sum $| > $@
+
 clean:
 	rm -f $(TARGS) $(DEPS) pickle.*
